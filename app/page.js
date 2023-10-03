@@ -1,7 +1,27 @@
+'use client'
 import Image from 'next/image'
 import styles from './page.module.css'
 
 export default function Home() {
+
+  async function getNameById(id) {
+    try {
+      const response = await fetch(`http://localhost:8081/name?id=${id}`);
+  
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+  
+      const data = await response.json();
+      console.log('Name:', data.name);
+      // Do something with the name
+  
+    } catch (error) {
+      console.error('Error:', error);
+      // Handle the error
+    }
+  }
+
   return (
     <main className={styles.main}>
       <div className={styles.description}>
@@ -27,7 +47,7 @@ export default function Home() {
           </a>
         </div>
       </div>
-
+      <button onClick={()=>getNameById(46)}>getData</button>
       <div className={styles.center}>
         <Image
           className={styles.logo}
