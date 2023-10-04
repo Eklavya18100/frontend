@@ -6,7 +6,7 @@ export default function Home() {
 
   async function getNameById(id) {
     try {
-      const response = await fetch(`http://localhost:8081/name?id=${id}`);
+      const response = await fetch(`https://backend-git-main-eklavya18100.vercel.app/name?id=${id}`);
   
       if (!response.ok) {
         throw new Error('Network response was not ok');
