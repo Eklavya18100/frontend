@@ -15,7 +15,7 @@ export default function Home() {
       const data = await response.json();
       console.log('Name:', data.name);
       // Do something with the name
-  
+  //ef
     } catch (error) {
       console.error('Error:', error);
       // Handle the error
@@ -47,6 +47,7 @@ export default function Home() {
           </a>
         </div>
       </div>
+      
       <button onClick={()=>getNameById(46)}>getData</button>
       <div className={styles.center}>
         <Image
